@@ -39,6 +39,7 @@ void calculate_bill();
 void window(int a,int b,int c,int d);
 void clear_seven_to_nineteen();
 void separator_line(); // prints line between shopkeepers bill and cusotmer bill
+void display_bill();
 
 void exit(); // we will not be using this function for sure. because we will be using """"exit(0)"""" function from <stdlib.h>;
 
@@ -55,7 +56,6 @@ struct product
 
 COORD coord = {0, 0}; // this is global variable used for the position of cursor // it is included in <windows.h>  header
 
-void display_bill();
 int main()
 
 {
