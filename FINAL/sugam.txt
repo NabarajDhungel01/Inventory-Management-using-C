@@ -1,0 +1,15 @@
+	  NAVY CYBER STORE          
+	      L.A., USA               
+             Date: 11/07/2022        
+
+---------------------------------------
+Particulars     Rate    Qty.    Amount
+---------------------------------------
+One			1		1		1500
+Two			2		2		3000
+Five			5		4		6000
+                   =====================
+                    Grand Total : 10500
+                   =====================
+
+		Thank You, Visit again.

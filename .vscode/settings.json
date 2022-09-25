@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "iomanip": "cpp",
+        "*.tcc": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "system_error": "c",
+        "ctype.h": "c",
+        "add_TWO_STRING.C": "cpp",
+        "time.h": "c"
+    }
+}
