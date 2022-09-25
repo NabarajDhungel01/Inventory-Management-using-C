@@ -7,9 +7,13 @@
         "string": "c",
         "unordered_map": "c",
         "vector": "c",
+<<<<<<< HEAD
         "system_error": "c",
         "ctype.h": "c",
         "add_TWO_STRING.C": "cpp",
         "time.h": "c"
+=======
+        "system_error": "c"
+>>>>>>> 02ab3c80dd536a6fc7e87f0f3dc64051bfab01d5
     }
 }
