@@ -2183,218 +2183,141 @@ void search_by_code()
 
     FILE *filep1;
     system("cls");
-    int get_code = 0;
-    int chr = 0;
-BY_CODE: // search product by code
+    int get_code = 0, int_chr = 0;
+    int chr = 0, total_chr = 0, input_count = 0, temp_code1 = 0, temp_code2 = 0, count = 0;
+    long ten = 0, ten2 = 0;
 
-    gotopositionxy(0, 10);
+    gotopositionxy(0, 0);
     for (int i = 0; i < 99; i++)
     {
         printf("-"); // this will be printed 100 times to make a bar like this ----------------------------------------
     }
     printf("\n");
-
-    // we are tweaking with only Y-axis because we want output horizontally like this↓↓↓↓
-    // Product Name      Product Price     Product Company    Product Code   Product Quantity  etc
-    gotopositionxy(5, 11);
-    printf("Product Code");
-    gotopositionxy(25, 11);
-    printf("Product Name");
-    gotopositionxy(40, 11);
-    printf("Product Company");
-    gotopositionxy(60, 11);
-    printf("Product Price");
-    gotopositionxy(80, 11);
-    printf("Product Quantity");
-
-    printf("\n");
-    for (int i = 0; i < 99; i++)
     {
-        printf("-"); // this will be printed 100 times to make a bar like this ----------------------------------------
-    }
-    printf("\n");
-    filep1 = fopen("ProductDetails.dat", "r");
+        // we are tweaking with only Y-axis because we want output horizontally like this↓↓↓↓
+        // Product Name      Product Price     Product Company    Product Code   Product Quantity  etc
+        gotopositionxy(5, 1);
+        printf("Product Code");
+        gotopositionxy(25, 1);
+        printf("Product Name");
+        gotopositionxy(40, 1);
+        printf("Product Company");
+        gotopositionxy(60, 1);
+        printf("Product Price");
+        gotopositionxy(80, 1);
+        printf("Product Quantity");
 
-    gotopositionxy(5, 6);
-    int tempp = 0;
-    int count = 0;
-    int count2 = 0;
-
-    int repeat_times_inside_eof_loop = 0;
-    long double ten = 0;
-    int comparison_code = 0;
-    int temp_pdt_code = 0;
-    int temp_pdt_code2 = 0;
-    int a = 0;
-    gotopositionxy(10, 5);
-    printf("Code : ");
-
-    do
-    {
-        chr = getch(); /*  printf("\n 2224") ; */
-        printf("%d", chr - 48);
-        tempp = 0;
-
-        tempp = chr - 48;
-        gotopositionxy(19 + repeat_times_inside_eof_loop, 5);
-
-        count = 0;
-        count2 = 0;
-        repeat_times_inside_eof_loop = 0;
-        ten = 0;
-        comparison_code = 0;
-        temp_pdt_code = 0;
-        temp_pdt_code2 = 0;
-        int tenn = 0;
-        // get_code = 0;
-
-        get_code = get_code * 10 + tempp; /* printf("\n 2230") ; */
-        printf("\n Get_COde is  %d \n  ", get_code);
-        while (fscanf(filep1, "%i %s %s %i %i\n", &pdt.product_code, pdt.product_name, pdt.product_company, &pdt.product_price, &pdt.product_quantity) != EOF)
+        printf("\n");
+        for (int i = 0; i < 99; i++)
         {
-            printf("\n\n AFTER CHANGING GET CODE  : %d", get_code);
-
-            printf("\n\n BEFORE CHANGING CODE  : %d", pdt.product_code);
-
-            printf("\n Repition: %d ", repeat_times_inside_eof_loop + 1);
-
-            temp_pdt_code = pdt.product_code;  /*printf("\n 2235"); */
-            temp_pdt_code2 = pdt.product_code; /* printf("\n 2236") ; */
-
-            count = count_number(pdt.product_code);
-            printf("\n COUNT IS %d \n", count);
-            printf("\n  %d \n", repeat_times_inside_eof_loop);
-
-            count2 = ((count - repeat_times_inside_eof_loop) + 1); /* printf("\n 2238"); */
-            printf("\n COUNT2 is :  %d \n");
-
-            // ten = pow(10, count2);;/*  printf("\n 2240") ; */
-            ten = power(10, count2);
-
-            printf("\n TEN is : %d", ten);
-
-            temp_pdt_code2 = temp_pdt_code2 / ten; /*  printf("\n 2242") ; */
-            printf("\nTEMP_PDT_CODE_2 is : %d", temp_pdt_code2);
-            pdt.product_code = temp_pdt_code2;
-            printf;
-            ("\n 2244");
-            printf("\nPdt.product Code  is : %d", pdt.product_code);
-            getch();
-            // printf("\n\n %d ",pdt.product_code);
-
-            printf("Get_Code is : %d", get_code);
-            printf("Product_code is : %d", pdt.product_code);
-
-            printf("\n\n AFTER CHANGING CODE  : %d", pdt.product_code);
-            printf("\n\n AFTER CHANGING GET CODE  : %d", get_code);
-
-            getch();
-
-            if (get_code == pdt.product_code)
-            {
-                printf("\n 2253");
-                a++;
-                // window(25, 70, 20, 28);
-                // gotopositionxy(30, 18);
-                // printf(" =*=*=*=*=  Product Found  =*=*=*=*=");
-                gotopositionxy(5, 13 + repeat_times_inside_eof_loop);
-                printf("%d", temp_pdt_code);
-                // printf("Product Code\t\t: %i", temp_pdt_code);
-                gotopositionxy(25, 13 + repeat_times_inside_eof_loop);
-                printf("%s", pdt.product_name);
-                // printf("Product Name\t\t: %s", pdt.product_name);
-                gotopositionxy(40, 13 + repeat_times_inside_eof_loop);
-                printf("%s", pdt.product_company);
-
-                // printf("Product Company\t\t: %s", pdt.product_company);
-                gotopositionxy(60, 13 + repeat_times_inside_eof_loop);
-                printf("%d", pdt.product_price);
-                // printf("Price\t\t\t: %i", pdt.product_price);
-                gotopositionxy(80, 13 + repeat_times_inside_eof_loop);
-                printf("%d", pdt.product_quantity);
-
-                // printf("Product Quantity\t\t: %i\n\n", pdt.product_quantity);
-            }
-            repeat_times_inside_eof_loop++;
-            printf("\n\n\n\n\n\n\n\n\n\n 2269");
+            printf("-"); // this will be printed 100 times to make a bar like this ----------------------------------------
         }
+        printf("\n");
+    }
+    // filep1 = fopen("ProductDetails.dat", "r");
+DO_LOOP_0:
+    printf("\n\n\npdt.product code");
+    scanf("%d", &pdt.product_code);
+    temp_code1 = pdt.product_code; // Storing for future use
+    temp_code2 = pdt.product_code; // Storing for future use
+    count = count_number(pdt.product_code);
+DO_LOOP:
+    // screen();
+    gotopositionxy(10, 12);
 
-    } while (chr != 13); // until the enter is pressed
+    {
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+        printf("                                                       ");
+    }
+    gotopositionxy(10, 10);
+    printf("Code  : ");
+    gotopositionxy(20 + input_count, 10);
+    chr = getch();
+    if (chr == 13)
+    {
+        goto END_OF_DO_LOOP;
+    }
+
+    int_chr = chr - 48;
+    printf("%d", int_chr);
+    total_chr = (total_chr * 10) + int_chr;
+
+    input_count = input_count + 1;
+    // while (fscanf(filep1, "%i %s %s %i %i\n", &pdt.product_code, pdt.product_name, pdt.product_company, &pdt.product_price, &pdt.product_quantity) != EOF)
+    // {
+
+    ten = count - input_count;
+    ten2 = power(10, ten);
+
+    printf("\n\n\n Input_count = %d\n total_chr = %d \ntemp_code1 = %d \n temp_code2 = %d \n count = %d \n ten = %d\n ten2 = %d \n", input_count, total_chr, temp_code1, temp_code2, count, ten, ten2);
+
+    temp_code1 = pdt.product_code / ten2;
+    printf("\n\n FINAL PDT CODE TO COMPARE IS : %d", temp_code1);
 
     getch();
+    goto DO_LOOP;
+
+// if (get_code == pdt.product_code)
+// {
+//     printf("\n 2253");
+//     a++;
+//     // window(25, 70, 20, 28);
+//     // gotopositionxy(30, 18);
+//     // printf(" =*=*=*=*=  Product Found  =*=*=*=*=");
+//     gotopositionxy(5, 13 + repeat_times_inside_eof_loop);
+//     printf("%d", temp_pdt_code);
+//     // printf("Product Code\t\t: %i", temp_pdt_code);
+//     gotopositionxy(25, 13 + repeat_times_inside_eof_loop);
+//     printf("%s", pdt.product_name);
+//     // printf("Product Name\t\t: %s", pdt.product_name);
+//     gotopositionxy(40, 13 + repeat_times_inside_eof_loop);
+//     printf("%s", pdt.product_company);
+
+//     // printf("Product Company\t\t: %s", pdt.product_company);
+//     gotopositionxy(60, 13 + repeat_times_inside_eof_loop);
+//     printf("%d", pdt.product_price);
+//     // printf("Price\t\t\t: %i", pdt.product_price);
+//     gotopositionxy(80, 13 + repeat_times_inside_eof_loop);
+//     printf("%d", pdt.product_quantity);
+
+//     // printf("Product Quantity\t\t: %i\n\n", pdt.product_quantity);
+// }
+// repeat_times_inside_eof_loop++;
+// printf("\n\n\n\n\n\n\n\n\n\n 2269");
+// }
+END_OF_DO_LOOP:
+    // } while (chr != 13); // until the enter is pressed
+    printf("\n\n exiting");
+    getch();
     exit(0);
-    // display_menu();
-
-    /*
-        // char repeat;
-        // FILE *filep1;
-        // int a = 0;
-        // int target_code = 0;
-        // // we use this variable to ask yes or no later
-        // long int size = sizeof(pdt); // size of struct product
-
-        // if ((filep1 = fopen("ProductDetails.dat", "r+")) == NULL) // r+ does both read and write
-        // {
-        //     printf(" \n\n\t\t RECORD FILE IS EMPTY \n");
-        //     printf("\n\t\t Enter any key to go back to main menu\n");
-        //     getch();
-        //     display_menu();
-        // }
-        // else
-        // {
-        //     if (repitition > 0)
-        //     {
-        //         printf("\n\n\t\t\tAgain !!\n\n\n\n Code of Product to search\t:");
-        //     }
-        //     else
-        //     {
-        //         printf("\n\nCode of Product to search\t: ");
-        //     }
-        //     scanf("%i", &target_code);
-
-        //     fflush(stdin);
-
-        //     while (fscanf(filep1, "%i %s %s %i %i\n", &pdt.product_code, pdt.product_name, pdt.product_company, &pdt.product_price, &pdt.product_quantity) != EOF)
-        //     {
-        //         if (target_code == pdt.product_code)
-        //         {
-
-        //             a = 1;
-        //             window(25, 70, 20, 28);
-        //             gotopositionxy(30, 18);
-        //             printf(" =*=*=*=*=  Product Found  =*=*=*=*=");
-        //             gotopositionxy(30, 22);
-        //             printf("Product Code\t\t: %i", pdt.product_code);
-        //             gotopositionxy(30, 23);
-        //             printf("Product Name\t\t: %s", pdt.product_name);
-        //             gotopositionxy(30, 24);
-        //             printf("Product Company\t\t: %s", pdt.product_company);
-        //             gotopositionxy(30, 25);
-        //             printf("Price\t\t\t: %i", pdt.product_price);
-        //             gotopositionxy(30, 26);
-        //             printf("Product Quantity\t\t: %i\n\n", pdt.product_quantity);
-        //         }
-        //     }
-        //     if (!a) // if a = 0
-        //     {
-        //         printf("\n\n\n  The product doesn't exists!!!  \n\n\n\n");
-        //     }
-        //     fclose(filep1);
-        //     gotopositionxy(33, 33);
-        //     printf("\n\n\n\nSearch Another Product(Y/N)\t : ");
-        // }
-        // repeat = getche();
-        // printf("\n");
-        // if (repeat == 'y' || repeat == 'Y')
-        // {
-        //     repitition = 1;
-        //     goto again;
-        // }
-        // // if user presses the Y the process will repeat
-        // // if user presses any other button than Y he will be automatically directed to the main menu
-    */
+    // getch();
+    // exit(0);
 }
-
 void search_by_name()
 {
     system("cls");

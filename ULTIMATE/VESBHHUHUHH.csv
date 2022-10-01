@@ -1,0 +1,24 @@
+ 
+ NAVY INVENTORY MGMT SYSTEM
+ Product Details 
+Export Time : Sat Oct 01 21:54:07 2022
+
+
+ S.No, Product Code,"Product Name","Product Company","Qty","Price"
+1,1,Ane,Onec,1,2
+2,12,One,Onec,1,30
+3,123,One,Onec,1,30
+4,1234,One,Onec,1,30
+5,12345,One,Onec,1,30
+6,123456,One,Onec,1,30
+7,1234567,One,Onec,1,30
+8,12345678,One,Onec,1,30
+9,123456789,One,Onec,1,30
+10,23456789,Two,Twoc,2,10
+11,3456789,Three,Threec,3,30
+12,456789,Four,Fourc,4,44
+13,56789,Five,Fivec,5,49
+14,123456789,Onetwothree,Conetwothreec,1500,9
+15,6789,Six,Sixcompany,66,6
+16,78912346,Seve,Sada,77,777
+17,1298,Vesh,Devi,10,1

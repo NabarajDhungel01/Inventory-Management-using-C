@@ -51,3 +51,9 @@ Onetwothree			1500		2		3000
 Onetwothree			1500		10		15000
 Onetwothree			1500		10		15000
 Onetwothree			1500		1		1500
+One			1		20		1540
+One			1		1		77
+One			1		1		1
+Ane			1		2		2
+Ane			1		2		2
+Ane			1		2		2
