@@ -143,7 +143,7 @@ void login_screen() // Making Login Function
             c = password[i];       //
             if (c == 13)           // if user inputs the password more than 13 character, it will exit
                 break;             // will exit loop
-            else                   // until the user enters the password less than 13 characers, it will take input and print asterik in output when one character is taken
+            else                     // until the user enters the password less than 13 characers, it will take input and print asterik in output when one character is taken
                 printf("*");       //
             i++;
         }
@@ -157,7 +157,7 @@ void login_screen() // Making Login Function
 
             printf("!!! LOGIN IS SUCCESSFUl\n\n");
 
-            printf("              =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
+            printf("              =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= \n");
             printf("              ==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==");
             printf("\n              === WELCOME TO NAVY'S INVENTORY MANAGEMENT SYSTEM =-=\n");
             printf("              ===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
